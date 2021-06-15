@@ -1,0 +1,17 @@
+26. Remove Duplicates from Sorted Array
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+		int numlen = nums.size();
+		int len = 0;
+		int i = 0;
+		int j = 0;
+		for(;i<numlen;i++){
+			if(nums[j]!=nums[i]){
+				num[j+1] = nums[i];
+				j++;
+			}
+		}
+		return j+1;
+    }
+};
