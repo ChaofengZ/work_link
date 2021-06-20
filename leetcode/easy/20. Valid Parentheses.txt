@@ -6,34 +6,51 @@
 
 	1. Open brackets must be closed by the same type of brackets.
 	2. Open brackets must be closed in the correct order.
-### status
-pass
-执行用时：4 ms, 在所有 C++ 提交中击败了38%的用户
-内存消耗：6.2 MB, 在所有 C++ 提交中击败了45.23%的用户
-```
-class Solution {
-public:
-    bool isValid(string s) {
-        stack<int> st;
-        unordered_map<char,int> m{{'(',1},{'[',2},{'{',3}, {')',4},{']',5},{'}',6}};
-        bool istrue = true;
-        for(char c:s){
-            int flag = m[c];
-            if(flag<=3){
-                st.push(flag);
-            }
-            else{
-                if(!st.empty()&&st.top()==flag-3){
-                    st.pop();
-                }
-                else{
-                    istrue = false;
-                    break;
-                }
-            }
-        }
-        if(!st.empty()) istrue = false;
-        return istrue;
-    }
-};
-```
+	
+	```
+	class Solution {
+	public:
+		bool isValid(string s) {
+			stack st;
+			len = s.size();
+			for(int i=0;i<s.size();i++){
+				switch s[i]{
+					case '(':
+						st.push(s[i]);
+						break;
+					case '[':
+						st.push(s[i]);
+						break;
+					case '{':
+						st.push(s[i]);
+						break;
+					case ')':
+						if(st.top != '('){
+							return false;
+						}
+						else{
+							st.pop();
+						}
+						break;
+					case ']':
+						if(st.top != '['){
+							return false;
+						}
+						else{
+							st.pop();
+						}
+						break;
+					case '}':
+						if(st.top != '{'){
+							return false;
+						}
+						else{
+							st.pop();
+						}
+						break;
+				}
+			}
+			return true;
+		}
+	};
+	```
