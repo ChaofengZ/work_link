@@ -1,10 +1,15 @@
+status:pass
+执行用时：0 ms, 在所有 C++ 提交中击败了100.00%的用户
+内存消耗：8.8 MB, 在所有 C++ 提交中击败了89.30%的用户
+
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
 		string prefix = "";
 		int sl = strs.size();
+        if(strs[0] == "") return prefix;
 		bool flag = true;
-		for(int i = 0;i<sl;i++){
+		for(int i = 0;i<strs[0].size();i++){
 			char tempc = strs[0][i];
 			for(int j = 1;j<sl;j++){
 				if(strs[j][i] != strs[0][i]){
@@ -19,6 +24,6 @@ public:
 				break;
 			}
 		}
-		renturn prefix;
+		return prefix;
     }
 };
