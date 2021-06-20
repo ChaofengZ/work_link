@@ -1,56 +1,36 @@
 ## 20. Valid Parentheses
 
-	Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
-	An input string is valid if:
+An input string is valid if:
 
-	1. Open brackets must be closed by the same type of brackets.
-	2. Open brackets must be closed in the correct order.
-	
-	```
-	class Solution {
-	public:
-		bool isValid(string s) {
-			stack st;
-			len = s.size();
-			for(int i=0;i<s.size();i++){
-				switch s[i]{
-					case '(':
-						st.push(s[i]);
-						break;
-					case '[':
-						st.push(s[i]);
-						break;
-					case '{':
-						st.push(s[i]);
-						break;
-					case ')':
-						if(st.top != '('){
-							return false;
-						}
-						else{
-							st.pop();
-						}
-						break;
-					case ']':
-						if(st.top != '['){
-							return false;
-						}
-						else{
-							st.pop();
-						}
-						break;
-					case '}':
-						if(st.top != '{'){
-							return false;
-						}
-						else{
-							st.pop();
-						}
-						break;
-				}
-			}
-			return true;
-		}
-	};
-	```
+1. Open brackets must be closed by the same type of brackets.
+2. Open brackets must be closed in the correct order.
+
+```
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<int> st;
+        unordered_map<char,int> m{{'(',1},{'[',2},{'{',3}, {')',4},{']',5},{'}',6}};
+        bool istrue = true;
+        for(char c:s){
+            int flag = m[c];
+            if(flag<=3){
+                st.push(flag);
+            }
+            else{
+                if(!st.empty()&&st.top()==flag-3){
+                    st.pop();
+                }
+                else{
+                    istrue = false;
+                    break;
+                }
+            }
+        }
+        if(!st.empty()) istrue = false;
+        return istrue;
+    }
+};
+```
