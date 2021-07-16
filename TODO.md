@@ -1,7 +1,3 @@
-1. 制定学习路线
-  - numpy
-  - panda
-2. 添加民谣歌单，给上班一点甜
-3. 转正考试
-4. 定下每周死任务，完成后可以适当放松，没完成不可以打球~
-
+-  添加民谣歌单，给上班一点甜
+-  下载并上传graphviz，CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/main/win-64/repodata.json.bz2>
+-  理解并实践机器学习经典算法
