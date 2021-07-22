@@ -1,3 +1,2 @@
--  添加民谣歌单，给上班一点甜
--  下载并上传graphviz，CondaHTTPError: HTTP 000 CONNECTION FAILED for url <https://repo.continuum.io/pkgs/main/win-64/repodata.json.bz2>
 -  理解并实践机器学习经典算法
+- lq18382002719
