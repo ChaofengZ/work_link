@@ -51,7 +51,7 @@ public:
 		while(!q1.empty() && !q2.empty()){
 			left = q1.front();
 			right = q2.front();
-			if(left -> val != right->val){
+			if(left -> val != right->val || q1.empty() || q2.empty()){
 				return False;
 			}
 			q1.pop();
